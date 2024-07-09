@@ -1,14 +1,13 @@
+
 class Solution:
-    def averageWaitingTime(self, customers):
-        current_time = 0 # keeps track of the time the chef takes to start the next order
-        total_waiting_time = 0 # waiting time for all customers
+    def averageWaitingTime(self, customers: List[List[int]]) -> float:
+        current_time = 0
+        total_waiting_time = 0
         
-        for arrival, time in customers:
-            if current_time < arrival:
-                current_time = arrival
-            waiting_time = current_time + time - arrival
-            total_waiting_time += waiting_time
-            current_time += time
+        for arrival_time, preparation_time in customers:
+            if current_time < arrival_time:
+                current_time = arrival_time
+            current_time += preparation_time
+            total_waiting_time += (current_time - arrival_time)
         
-        average_waiting_time = total_waiting_time / len(customers)
-        return average_waiting_time
+        return total_waiting_time / len(customers)
