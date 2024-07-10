@@ -15,3 +15,19 @@ steps is solving the problem include:
   -calculate the waiting time for each customer. The time the customer waits is based on when the chef starts preparing the order.
 - update the chef’s idle time. After finishing the customer’s order, update the time when the chef will be idle next.
   CHeck on the Average_waiting_time.py
+
+Problem 2.
+The Leetcode filesystem keeps a log each time some user performs a change folder operation.
+THe operations are "../" move t parent folder of the current folder.
+"./" remain in the same folder
+"x/" move to child folder named x
+example 1: input logs = ["d1/","d2/","../","d21/","./"]
+solution: 1+1-1+1 = 2
+e
+Input: logs = ["d1/","d2/","./","d3/","../","d31/"]
+Output: 3
+Input: logs = ["d1/","../","../","../"]
+Output: 0
+Code:
+it is imp to note that the dir_level should be decremented when
+encountering "../" and should not change when encountering "./" but should increment for other cases that signifify up surge.
