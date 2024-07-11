@@ -57,3 +57,23 @@ Output: [0,1]
 
 Solution:
 Use of a hash map or dictionary in python.
+
+Problem 4
+You are given a string s that consists of ower case English letters and brackets. Reverse the strings in each pair of matching parentheses, starting from the innermost one. The result should not contain brackets.
+Example 1:
+input: s = "(abcd)"
+output: "dcba"
+Example 2:
+input: s = "(u(love)i)"
+output: "iloveu
+Example 3:
+Input: s = "(ed(et(oc))el)"
+Output: "leetcode"
+Solution:
+In solving this problem, I will use a stack in helping to keep track of the characters and reverse the substrings. the steps:
+-initialize empty stack.
+-traverse each character in the string.(if char is an opening parentheses push it on to the stack., if char is a closing parentheses, pop characters from hte stack until the opening parentheses. reverse the popped characers and push them back to the stack and if character is a letter, push it onto the stack.)
+Code:
+class Solution:
+def reverseParentheses (self, s: str) -> str:
+if (S= str):
