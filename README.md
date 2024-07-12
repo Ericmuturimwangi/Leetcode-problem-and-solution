@@ -77,3 +77,7 @@ Code:
 class Solution:
 def reverseParentheses (self, s: str) -> str:
 if (S= str):
+
+Problem 5
+You are given a string s and two integers x and y. YOu can perform two types of operations any number of times. Remove substring "ab" and gain x points. eg, when removinf "ab" from "cabxbae" it becomes "cxbae".
+Remove substring "ba" and gain y points. For exmaple, when removing "ba" from "cabxbae" it becomes "cabxe". Return the mx points you can gain after applying the operations.
