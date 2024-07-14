@@ -83,3 +83,19 @@ You are given a string s and two integers x and y. YOu can perform two types of 
 Remove substring "ba" and gain y points. For exmaple, when removing "ba" from "cabxbae" it becomes "cabxe". Return the mx points you can gain after applying the operations.
 Solution:
 Using greddy approach. If x>=y, then consider removing "ab" first and removing "ba" next. Otherwise, consider removing "ba" first and removing "ab" next.
+
+Problem 6
+2751 Robot Collisions
+There are n 1-indexed robots, each having a position on a line, health, and movement direction. You are given 0-indexed integer arrays positions, healthsm and a string directins (directions[i] is either 'L' for left or 'R' for right.) ALl integers in positions are unique.
+ALl robotsstart to move in line simultaneously at the same speed in their given directions. If 2 robots ever share the same position while moving , they collide. IN case the two robots collide, the robot with lower health is removed from the lince and the health of the other robot decreases by one. THe survivign robot continues in the same direction it was going. If both robots have the sam ehealth, they are both removed from the line. Task ahead is to determine the health of the robots that survive the collision, in the same order that the robots were given. Return an array to contain the health of the remaining robots.
+SOLUTION:
+The first step should be to sort the robots by positions. This helps in simulating the
+collisions by movements on the line.
+
+We can use stakc to simualte the movements and the collisions:
+-iterate through the robots in order of their positions.
+-if a robot is moving right (R) push it into the stack.
+-if a robot is moving (L) check for collisions with robots in the stack moving right.
+incase the stack is empty or the top robot in the stack is movingleft, push the current robot onto the stack.
+
+-Otherwise, simulate the collision:Compare the health of the current robot and the top robot in the stack, adjust the healths based on the collisiion rules andremove robots as necessary.
