@@ -1,7 +1,7 @@
-from typing import List
+from typing import List # importing list from typing module.
 
 class Solution:
-    def survivedRobotHealths(self, positions:List[int], healths:list[int], directions: str) -> List[int]:
+    def survivedRobotHealths(self, positions:List[int], healths:list[int], directions: str) -> List[int]: # clss solution with a method survivedRobotHealths taking 3 parameters positions integers, healths integers and directions as a string. 
         robots = sorted(zip(positions, health, directions, range(leng(positions)))) # zip is used to combine the positions, health, directions and range. then sort tuples by positions. 
         stack = [] #used to simulate the collision process. 
 
