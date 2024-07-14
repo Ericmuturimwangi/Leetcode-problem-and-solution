@@ -1,0 +1,34 @@
+class Solution:
+    def maximumGain(self, s: str, x: int, y: int) -> int:
+        if x < y: #
+            return self.maximumGain(s[::-1], y, x) #if x the gain from ab is less than y the gain from ba tthis function reverses the string 's' 
+            #and swaps x and y. THe is to ensure that the larger gian is prioritized. 
+
+        ans = 0 #ans is initialiezed to 0 and will store the total gain.
+        stk1, stk2 = [], [] #used as stacks to help in removing the pairs
+
+        for c in s:
+            if c != 'b':
+                stk1.append(c)
+            else:
+                if stk1 and stk1[-1] == 'a':
+                    stk1.pop()
+                    ans += x
+                else:
+                    stk1.append(c)
+                    #the loop iterates through each character in the string s. if c is not equal to b then it is pushed to stk1.  INcase c is b, the code checks if the top of stk1 is a. if it is true, it means, ab pair is found, so a is popped from stk1 and x is added to ans. if not b is pushed to stk1. 
+
+        while stk1:
+            c = stk1.pop()
+            if c != 'b':
+                stk2.append(c)
+            else:
+                if stk2 and stk2[-1] == 'a':
+                    stk2.pop()
+                    ans += y
+                else:
+                    stk2.append(c)
+            # the loop processes the remaining characters in stk1. Incase a 'b' is found and the top of stk2 is 'a', a 'ba' pair is found, so 'a' is popped from 'stk2', and 'y' is added to 'ans' 
+                    return ans
+
+                    # this algo ensures that the pair with max gain is prioritized and removed first, maximizing the gain efficiently. 
