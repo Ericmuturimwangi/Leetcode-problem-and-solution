@@ -153,3 +153,13 @@ You are given a 2D integer array descriptions where descriptions[i] = [parenti, 
   Input: descriptions = [[20,15,1],[20,17,0],[50,20,1],[50,80,0],[80,19,1]
   Output: [50,20,80,15,17,19]
   Explanation: THe first node in every para is the parent, the second is the child the third is either a 1 or 0 to represent if the child is going left or right.
+
+Problem 9 2096. Step-By-Step DIrections From a Binary Tree Node to Another
+You are given the root of a binary tree with n nodes. Each node is uniquely assigned a value from 1 to n. You are also given an integer startvalue representing the value of the start node s, and a different int destValue representing the value of the destination node t. FInd the shortest path starting from node s and ending at node t. Generate step-by-step directions of such path as a string consisting of only the uppercase letters 'L, 'R', and 'U'. Each letter indicates a specific direction:
+L- means going from a node to the left child node.
+R- means going from a node to the right child node.
+U- means going from a node to the parent node.
+
+Solution:
+
+Problem 10 1380. Lucky Numbers in A Matrix
