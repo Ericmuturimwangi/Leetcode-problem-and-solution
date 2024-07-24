@@ -7,7 +7,7 @@ class Solution:
             n = str(n)
             mapped_n = 0
             for c in n:
-                mapped_n *= 0
+                mapped_n *= 10
                 mapped_n += mapping[int(c)]
 
             pairs.append((mapped_n, i))
